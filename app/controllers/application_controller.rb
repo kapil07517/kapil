@@ -9,8 +9,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   before_action :get_recent_album
+  before_action :recent_albums
   
   def get_recent_album
     @rec_album = Album.order("released_on").last
+  end
+  
+  def recent_albums
+    @recent_albums = Album.order("released_on").limit(4)
   end
 end

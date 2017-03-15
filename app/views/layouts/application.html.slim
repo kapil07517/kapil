@@ -49,8 +49,9 @@ html lang="en"
         .row
           .col-md-2
             ul
-              li LATEST
-              li ~
+              - @recent_albums.each do |album|
+                li= album.name
+              
           .col-md-2
             ul
               li OUR TEAM
