@@ -33,7 +33,11 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    respond_with(@song)
+    @songs = Song.all
+    respond_to do |format|
+      format.js
+      format.html {redirect_to root_path}
+    end
   end
 
   private
