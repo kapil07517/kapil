@@ -10,7 +10,7 @@
     small.text-muted artist
 
 dl.dl-horizontal
-  dt Name
+  dt= image_tag(@artist.image_url)
   dd= @artist.name
 
 hr
