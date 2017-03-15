@@ -16,9 +16,9 @@ class PublishersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create publisher" do
+  test "should create publisher" do    
     assert_difference('Publisher.count') do
-      post :create, publisher: { address: @publisher.address, city: @publisher.city, name: @publisher.name, phone: @publisher.phone, state: @publisher.state, url: @publisher.url, zip: @publisher.zip }
+      post :create, publisher: { address: "77, US", city: "California", name: "Matt Maagi", phone: "123-234-3456", state: "AL", url: "http://google.com", zip: "34005" }
     end
 
     assert_redirected_to publisher_path(assigns(:publisher))
@@ -35,7 +35,7 @@ class PublishersControllerTest < ActionController::TestCase
   end
 
   test "should update publisher" do
-    patch :update, id: @publisher, publisher: { address: @publisher.address, city: @publisher.city, name: @publisher.name, phone: @publisher.phone, state: @publisher.state, url: @publisher.url, zip: @publisher.zip }
+    patch :update, id: @publisher, publisher: { address: "77, US", city: "California", name: "Matt Maagi", phone: "123-234-3456", state: "AL", url: "http://google.com", zip: "34005" }
     assert_redirected_to publisher_path(assigns(:publisher))
   end
 
